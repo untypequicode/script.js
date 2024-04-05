@@ -1,0 +1,11 @@
+:root {
+    --second-bg-color: var(--yellow-bg-color);
+    --second-text-color: var(--yellow-text-color);
+    --second-main-color: var(--yellow-main-color);
+}
+
+.dark-mode {
+    --second-bg-color: var(--yellow-bg-color);
+    --second-text-color: var(--yellow-text-color);
+    --second-main-color: var(--yellow-main-color);
+}
