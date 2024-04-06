@@ -49,6 +49,15 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
+    
+    if (typeof switch_mode !== "undefined" && switch_mode === "true") {
+        var switchMode = document.createElement("img");
+        switchMode.src = "images/sun.svg";
+        switchMode.alt = "switch-mode";
+        switchMode.id = "switch-mode";
+        navbar.appendChild(switchMode);
+    }
+    
     navbar.appendChild(activeNav);
     header.appendChild(navbar);
 

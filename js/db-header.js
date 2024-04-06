@@ -29,3 +29,5 @@ const logo = {
     link: "https://untypequicode.github.io/script.js",
     index: "Accueil",
 }
+
+const switch_mode = "true"
