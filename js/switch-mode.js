@@ -30,10 +30,10 @@ waitForElement("switch-mode", function () {
         const userTheme = sessionStorage.getItem("theme");
         if (userTheme === "dark") {
             document.body.classList.add("dark-mode");
-            switchmode.src = "images/moon.svg";
+            switchmode.src = "https://untypequicode.github.io/script.js/images/moon.svg";
         } else if (userTheme === "light") {
             document.body.classList.remove("dark-mode");
-            switchmode.src = "images/sun.svg";
+            switchmode.src = "https://untypequicode.github.io/script.js/images/sun.svg";
         }
     }
 
@@ -45,10 +45,10 @@ waitForElement("switch-mode", function () {
         document.body.classList.toggle("dark-mode");
 
         if (document.body.classList.contains("dark-mode")) {
-            switchmode.src = "images/moon.svg";
+            switchmode.src = "https://untypequicode.github.io/script.js/images/moon.svg";
             sessionStorage.setItem("theme", "dark");
         } else {
-            switchmode.src = "images/sun.svg";
+            switchmode.src = "https://untypequicode.github.io/script.js/images/sun.svg";
             sessionStorage.setItem("theme", "light");
         }
     };
