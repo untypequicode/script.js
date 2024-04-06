@@ -17,12 +17,12 @@ waitForElement("switch-mode", function () {
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
             document.body.classList.add("dark-mode");
             if (switchmode) {
-                switchmode.src = "images/moon.svg";
+                switchmode.src = "https://untypequicode.github.io/script.js/images/moon.svg";
             }
         } else {
             document.body.classList.remove("dark-mode");
             if (switchmode) {
-                switchmode.src = "images/sun.svg";
+                switchmode.src = "https://untypequicode.github.io/script.js/images/sun.svg";
             }
         }
 
