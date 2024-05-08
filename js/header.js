@@ -49,11 +49,10 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
-    
+
     if (typeof switch_mode !== "undefined" && switch_mode === "true") {
-        var switchMode = document.createElement("img");
-        switchMode.src = "https://untypequicode.github.io/script.js/images/sun.svg";
-        switchMode.alt = "switch-mode";
+        var switchMode = document.createElement("i");
+        switchMode.classList.add("bx", "bx-sun");
         switchMode.id = "switch-mode";
         navbar.appendChild(switchMode);
     }

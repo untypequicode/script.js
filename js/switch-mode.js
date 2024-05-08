@@ -17,12 +17,14 @@ waitForElement("switch-mode", function () {
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
             document.body.classList.add("dark-mode");
             if (switchmode) {
-                switchmode.src = "https://untypequicode.github.io/script.js/images/moon.svg";
+                switchmode.classList.remove("bx-sun");
+                switchmode.classList.add("bx-moon");
             }
         } else {
             document.body.classList.remove("dark-mode");
             if (switchmode) {
-                switchmode.src = "https://untypequicode.github.io/script.js/images/sun.svg";
+                switchmode.classList.remove("bx-moon");
+                switchmode.classList.add("bx-sun");
             }
         }
 
@@ -30,10 +32,12 @@ waitForElement("switch-mode", function () {
         const userTheme = sessionStorage.getItem("theme");
         if (userTheme === "dark") {
             document.body.classList.add("dark-mode");
-            switchmode.src = "https://untypequicode.github.io/script.js/images/moon.svg";
+            switchmode.classList.remove("bx-sun");
+            switchmode.classList.add("bx-moon");
         } else if (userTheme === "light") {
             document.body.classList.remove("dark-mode");
-            switchmode.src = "https://untypequicode.github.io/script.js/images/sun.svg";
+            switchmode.classList.remove("bx-moon");
+            switchmode.classList.add("bx-sun");
         }
     }
 
@@ -45,10 +49,12 @@ waitForElement("switch-mode", function () {
         document.body.classList.toggle("dark-mode");
 
         if (document.body.classList.contains("dark-mode")) {
-            switchmode.src = "https://untypequicode.github.io/script.js/images/moon.svg";
+            switchmode.classList.remove("bx-sun");
+            switchmode.classList.add("bx-moon");
             sessionStorage.setItem("theme", "dark");
         } else {
-            switchmode.src = "https://untypequicode.github.io/script.js/images/sun.svg";
+            switchmode.classList.remove("bx-moon");
+            switchmode.classList.add("bx-sun");
             sessionStorage.setItem("theme", "light");
         }
     };
