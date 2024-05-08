@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (typeof switch_mode !== "undefined" && switch_mode === "true") {
         var switchMode = document.createElement("i");
-        switchMode.classList.add("bx", "bx-sun");
+        switchMode.classList.add("bx", "bxs-sun");
         switchMode.id = "switch-mode";
         navbar.appendChild(switchMode);
     }

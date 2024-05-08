@@ -17,14 +17,14 @@ waitForElement("switch-mode", function () {
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
             document.body.classList.add("dark-mode");
             if (switchmode) {
-                switchmode.classList.remove("bx-sun");
-                switchmode.classList.add("bx-moon");
+                switchmode.classList.remove("bxs-sun");
+                switchmode.classList.add("bxs-moon");
             }
         } else {
             document.body.classList.remove("dark-mode");
             if (switchmode) {
-                switchmode.classList.remove("bx-moon");
-                switchmode.classList.add("bx-sun");
+                switchmode.classList.remove("bxs-moon");
+                switchmode.classList.add("bxs-sun");
             }
         }
 
@@ -32,12 +32,12 @@ waitForElement("switch-mode", function () {
         const userTheme = sessionStorage.getItem("theme");
         if (userTheme === "dark") {
             document.body.classList.add("dark-mode");
-            switchmode.classList.remove("bx-sun");
-            switchmode.classList.add("bx-moon");
+            switchmode.classList.remove("bxs-sun");
+            switchmode.classList.add("bxs-moon");
         } else if (userTheme === "light") {
             document.body.classList.remove("dark-mode");
-            switchmode.classList.remove("bx-moon");
-            switchmode.classList.add("bx-sun");
+            switchmode.classList.remove("bxs-moon");
+            switchmode.classList.add("bxs-sun");
         }
     }
 
@@ -49,12 +49,12 @@ waitForElement("switch-mode", function () {
         document.body.classList.toggle("dark-mode");
 
         if (document.body.classList.contains("dark-mode")) {
-            switchmode.classList.remove("bx-sun");
-            switchmode.classList.add("bx-moon");
+            switchmode.classList.remove("bxs-sun");
+            switchmode.classList.add("bxs-moon");
             sessionStorage.setItem("theme", "dark");
         } else {
-            switchmode.classList.remove("bx-moon");
-            switchmode.classList.add("bx-sun");
+            switchmode.classList.remove("bxs-moon");
+            switchmode.classList.add("bxs-sun");
             sessionStorage.setItem("theme", "light");
         }
     };
