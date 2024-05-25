@@ -36,3 +36,11 @@ const logo = {
 }
 
 const switch_mode = "true"
+
+const db_header_link = [
+    {
+        text: "GitHub",
+        url: "https://github.com/untypequicode/script.js",
+        content: `<i class='bx bxl-github'></i>`
+    }
+]

@@ -66,6 +66,25 @@ document.addEventListener("DOMContentLoaded", function () {
         navbar.appendChild(switchMode);
     }
     
+    if (typeof db_header_link !== "undefined" && Array.isArray(db_header_link) && db_header_link.length > 0) {
+        document.querySelectorAll(".header-link").forEach((item) => item.remove());
+        const navItems = document.createElement("div");
+        navItems.classList.add("header-links");
+        
+        db_header_link.forEach(function (link) {
+            if (typeof link.text !== "undefined" && typeof link.url !== "undefined" && typeof link.content !== "undefined") {
+                const navItem = document.createElement("a");
+                navItem.classList.add("header-link");
+                navItem.target = "_blank";
+                navItem.href = link.url;
+                navItem.ariaLabel = link.text;
+                navItem.innerHTML = link.content;
+                navItems.appendChild(navItem);
+            }
+        });
+        navbar.appendChild(navItems);
+    }
+    
     navbar.appendChild(activeNav);
     header.appendChild(navbar);
 
