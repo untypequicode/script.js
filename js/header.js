@@ -1,17 +1,26 @@
 document.addEventListener("DOMContentLoaded", function () {
-    var header = document.querySelector(".header");
+    const header = document.querySelector(".header");
 
     if (typeof logo !== "undefined") {
-        var logoElement = document.createElement("a");
+        const logoElement = document.createElement("a");
         if (typeof logo.type !== "undefined" && typeof logo.content !== "undefined") {
             if (logo.type === "image") {
-                var logoImage = document.createElement("img");
+                const logoImage = document.createElement("img");
                 logoImage.classList.add("logo-img");
                 logoImage.src = logo.content;
                 logoImage.alt = "Logo";
                 logoElement.appendChild(logoImage);
             } else if (logo.type === "text") {
                 logoElement.textContent = logo.content;
+            } else if (logo.type === "imagetext") {
+                if (Array.isArray(logo.content) && logo.content.length === 2) {
+                    const logoImage = document.createElement("img");
+                    logoImage.classList.add("logo-img");
+                    logoImage.src = logo.content[0];
+                    logoImage.alt = "Logo";
+                    logoElement.appendChild(logoImage);
+                    logoElement.appendChild(document.createTextNode(logo.content[1]));
+                }
             }
         }
         if (typeof logo.link !== "undefined") {
@@ -24,21 +33,21 @@ document.addEventListener("DOMContentLoaded", function () {
         header.appendChild(logoElement);
     }
 
-    var menuIcon = document.createElement("div");
+    let menuIcon = document.createElement("div");
     menuIcon.classList.add("bx", "bx-menu");
     menuIcon.id = "menu-icon";
     header.appendChild(menuIcon);
 
-    var navbar = document.createElement("nav");
+    let navbar = document.createElement("nav");
     navbar.classList.add("navbar");
 
-    var activeNav = document.createElement("span");
+    const activeNav = document.createElement("span");
     activeNav.classList.add("active-nav");
 
     if (typeof db_header !== "undefined") {
         db_header.forEach(function (link) {
             if (typeof link.text !== "undefined" && typeof link.url !== "undefined") {
-                var navItem = document.createElement("a");
+                const navItem = document.createElement("a");
                 navItem.href = link.url;
                 navItem.textContent = link.text;
                 if (link.text === document.body.dataset.active) {
@@ -51,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (typeof switch_mode !== "undefined" && switch_mode === "true") {
-        var switchMode = document.createElement("i");
+        const switchMode = document.createElement("i");
         switchMode.classList.add("bx", "bxs-sun");
         switchMode.id = "switch-mode";
         navbar.appendChild(switchMode);
@@ -102,8 +111,8 @@ window.onscroll = () => {
         header.classList.toggle("sticky", window.scrollY > 100);
     }
 
-    menuIcon = document.getElementById("menu-icon");
-    navbar = document.querySelector(".navbar");
+    let menuIcon = document.getElementById("menu-icon");
+    let navbar = document.querySelector(".navbar");
 
     if (menuIcon.classList.contains("bx-x")) {
         menuIcon.classList.remove("bx-x");

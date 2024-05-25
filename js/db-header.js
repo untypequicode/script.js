@@ -24,8 +24,13 @@ const db_header = [
 const logo = {
     type: "text",
     // type: "image",
+    // type: "imagetext",
     content: "script.js",
     // content: "images/favicon.svg",
+    // content: [
+    //     "images/favicon.svg",
+    //     "script.js",
+    // ],
     link: "https://untypequicode.github.io/script.js",
     index: "Accueil",
 }
