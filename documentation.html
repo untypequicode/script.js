@@ -20,7 +20,7 @@
     <link rel="icon" type="image/png" href="images/favicon.svg">
 
     <!-- font awesome -->
-    <link rel="stylesheet" href="https://untypequicode.github.io/style.css/css/index.css">
+    <link rel="stylesheet" href="https://untypequicode.github.io/style.css/css/documentation.css">
     <link rel="stylesheet" href="https://untypequicode.github.io/style.css/css/local.css">
     <link rel="stylesheet" href="css/local.css">
 </head>
@@ -29,7 +29,143 @@
 
     <header class="header"></header>
 
-    <section></section>
+    <section>
+        <div class="sv">
+            <h1 class="ah-i">Documentation</h1>
+            <h4 class="ah-i">Bienvenue dans la documentation de Script.js</h4>
+        </div>
+    </section>
+
+    <section class="s-bg-s">
+        <div class="sv">
+            <h3>Installation</h3>
+            <p>Pour utiliser Script.js, vous avez deux options :</p>
+            <div class="sv">
+                <h4>Télécharger le fichier JS</h4>
+                <p>Vous pouvez télécharger le fichier JS de Script.js et ses dépendances pour l'inclure dans votre projet.</p>
+                <ul class="sv">
+                    <li><p><code>&lt;script src="header.js"&gt;&lt;/script&gt;</code></p></li>
+                    <li><p><code>&lt;script src="footer.js"&gt;&lt;/script&gt;</code></p></li>
+                    <li><p><code>&lt;script src="switch-mode.js"&gt;&lt;/script&gt;</code></p></li>
+                </ul>
+
+                <h4>Utiliser le CDN</h4>
+                <p>Vous pouvez également utiliser le CDN de Script.js pour inclure le framework dans votre projet.</p>
+                <ul class="sv">
+                    <li><p><code>&lt;link rel="stylesheet" href="https://untypequicode.github.io/script.js/js/header.js"&gt;</code></p></li>
+                    <li><p><code>&lt;link rel="stylesheet" href="https://untypequicode.github.io/script.js/js/footer.js"&gt;</code></p></li>
+                    <li><p><code>&lt;link rel="stylesheet" href="https://untypequicode.github.io/script.js/js/switch-mode.js"&gt;</code></p></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="s-mh-25">
+        <h2>Les possibilités de Script.js</h2>
+    </section>
+
+    <section class="s-mh-25" id="section">
+        <div class="sv">
+            <h3>La gestion du header</h3>
+        </div>
+    </section>
+
+    <section class="s-mh-50">
+        <div class="sv">
+            <h4>Accéder au script du header</h4>
+            <h5>Télécharger le fichier JS</h5>
+            <p><code>&lt;script src="header.js"&gt;&lt;/script&gt;</code></p>
+            <h5>Utiliser le CDN</h5>
+            <p><code>&lt;link rel="stylesheet" href="https://untypequicode.github.io/script.js/js/header.js"&gt;</code></p>
+        </div>
+    </section>
+
+    <section class="s-mh-50">
+        <div class="sv">
+            <h4>Gestion du header</h4>
+            <p>Vous pouvez gérer le menu, le logo, le dark mode et les réseaux sociaux du header :</p>
+            <h5>Le contenu du menu du header</h5>
+            <p>Vous pouvez modifier le contenu du menu du header en modifiant le tableau <code>db_header</code> :</p>
+            <p><code>const db_header = [<br>
+                    {
+                    text: "Accueil",
+                    url: "index",
+                    },<br>
+                    {
+                    text: "A propos",
+                    url: "a-propos",
+                    }
+                    ];</code></p>
+            <p>La valeur <code>texte</code> correspond au texte du lien et la valeur <code>url</code> correspond à l'URL du lien.</p>
+            <h5>Le contenu du logo du header</h5>
+            <p>Vous pouvez modifier le contenu du logo du header en modifiant le tableau <code>logo</code> :</p>
+            <p class="code"><code>const logo = {<br>
+                type: "text",<br>
+                content: "script.js",<br>
+                link: "https://untypequicode.github.io/script.js",<br>
+                index: "Accueil",
+                }</code></p>
+            <p>La valeur <code>type</code> correspond au type de contenu du logo. Il est possible de choisir entre <code>text</code>, <code>image</code>. et <code>imagetext</code>.</p>
+            <p>La valeur <code>content</code> correspond au contenu du logo. Si le type est <code>text</code>, il s'agit du texte du logo.
+                Si le type est <code>image</code>, il s'agit de l'URL de l'image du logo.
+                Si le type est <code>imagetext</code>,
+                il s'agit du texte du logo et de l'URL de l'image du logo sous la forme <code>["images/favicon.svg", "script.js"]</code></p>
+            <p>La valeur <code>link</code> correspond à l'URL du lien du logo.</p>
+            <h5>Le dark mode du header</h5>
+            <p>Vous pouvez activer le dark mode du header en modifiant la valeur <code>switch_mode</code> :</p>
+            <p><code>const switch_mode = "true"</code></p>
+            <p>La valeur <code>true</code> active le dark mode et la valeur <code>false</code> désactive le dark mode.</p>
+            <h5>Les liens du header</h5>
+            <p>Vous pouvez modifier les liens du header en modifiant le tableau <code>db_header_link</code> :</p>
+            <p><code>const db_header_link = [
+                {
+                text: "GitHub",
+                url: "https://github.com/untypequicode/script.js",
+                content: `<i class='bx bxl-github'></i>`
+                }
+                ]</code></p>
+            <p>La valeur <code>text</code> correspond au texte du lien,
+                la valeur <code>url</code> correspond à l'URL du lien et la valeur <code>content</code> correspond au contenu du lien.</p>
+        </div>
+    </section>
+
+    <section class="s-mh-50">
+        <div class="sv">
+            <h4>Ajout du système de dark mode</h4>
+            <h5>Télécharger le fichier JS</h5>
+            <p><code>&lt;script src="switch-mode.js"&gt;&lt;/script&gt;</code></p>
+            <h5>Utiliser le CDN</h5>
+            <p><code>&lt;link rel="stylesheet" href="https://untypequicode.github.io/script.js/js/switch-mode.js"&gt;</code></p>
+        </div>
+    </section>
+
+    <section class="s-mh-50">
+        <div class="sv">
+            <h4>Accéder au script du footer</h4>
+            <h5>Télécharger le fichier JS</h5>
+            <p><code>&lt;script src="footer.js"&gt;&lt;/script&gt;</code></p>
+            <h5>Utiliser le CDN</h5>
+            <p><code>&lt;link rel="stylesheet" href="https://untypequicode.github.io/script.js/js/footer.js"&gt;</code></p>
+        </div>
+    </section>
+
+    <section class="s-mh-50">
+        <div class="sv">
+            <h4>Gestion du footer</h4>
+            <p>Vous pouvez gérer le texte et le lien du footer :</p>
+            <h5>Le contenu du footer</h5>
+            <p>Vous pouvez modifier le contenu du footer en modifiant le tableau <code>db_footer</code> :</p>
+            <p><code>const db_footer = {<br>
+                left: {
+                content: 'Copyright \u00A9 2024 Script.js | Tous droits réservés.',<br>
+                link: 'mentions-legales'
+                }
+                }</code></p>
+            <p>La valeur <code>content</code> correspond au texte du footer et la valeur <code>link</code> correspond à l'URL du lien du footer.</p>
+        </div>
+    </section>
+
+    <section class="s-mh-25"></section>
 
     <footer class="footer"></footer>
 

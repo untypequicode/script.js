@@ -11,10 +11,10 @@ const db_header = [
         text: "Exemples",
         url: "exemples",
     },
-    {
-        text: "A propos",
-        url: "a-propos",
-    },
+    // {
+    //     text: "A propos",
+    //     url: "a-propos",
+    // },
     {
         text: "Style.css",
         url: "https://untypequicode.github.io/style.css",
